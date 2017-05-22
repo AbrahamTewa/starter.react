@@ -1,4 +1,12 @@
-import console from 'better-console';
-import {start} from './helpers';
+import App from './App';
+import ReactDOM from 'react-dom';
 
-console.log(start());
+function initialize() {
+
+    console.log('DOMContentLoaded');
+
+    ReactDOM.render( App()
+                   , document.querySelector('body'));
+}
+
+document.addEventListener('DOMContentLoaded', initialize);
