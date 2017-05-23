@@ -1,17 +1,14 @@
 // ******************** NodeJS packages ********************
 const grunt = require('grunt');
-const babel = require('rollup-plugin-babel');
 
 // ******************** Script ********************
 grunt.initConfig({
-    rollup: {
-        options: {
-            format: 'iife'
-          , external: ['react']
-          , plugins: function() { return [babel({ exclude: './node_modules/**' })]; }
-        }
-      , main: { dest: 'build/index.js'
-              , src: 'src/index.js' }}
+
+    browserify: {
+        build: { options:  { transform: [['babelify', {presets: ['es2015', 'react']}]] }
+               , files: { 'build/index.js' : 'src/index.js' } }
+    }
+
 
    , copy: {
        html: {
@@ -60,7 +57,7 @@ grunt.initConfig({
 
 });
 
-grunt.loadNpmTasks('grunt-rollup');
+grunt.loadNpmTasks('grunt-browserify');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-watch');
@@ -69,5 +66,5 @@ grunt.loadNpmTasks('grunt-mocha');
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy', 'rollup']);
+grunt.registerTask('build', ['eslint', 'clean:build', 'copy', 'browserify']);
 grunt.registerTask('default', ['build']);
