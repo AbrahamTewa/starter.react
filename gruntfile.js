@@ -1,16 +1,11 @@
 // ******************** NodeJS packages ********************
 const grunt = require('grunt');
+const webpackConfig = require('./webpack.config');
+
 
 // ******************** Script ********************
 grunt.initConfig({
-
-    browserify: {
-        build: { options:  { transform: [['babelify', {presets: ['es2015', 'react']}]] }
-               , files: { 'build/index.js' : 'src/index.js' } }
-    }
-
-
-   , copy: {
+    copy: {
        html: {
            files: [{
                expand: true,
@@ -44,7 +39,7 @@ grunt.initConfig({
 
    , watch: {
        scripts: {
-           files: ['src/**/*.*'
+           files: [ 'src/**/*.*'
                   , 'gruntfile.js'
                   , 'package.json'
                   , '.eslintrc.json']
@@ -55,16 +50,25 @@ grunt.initConfig({
        }
    }
 
+   , webpack: {
+      options: {
+        stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+      },
+      prod: webpackConfig,
+      dev: Object.assign({ watch: true }, webpackConfig)
+    }
+
 });
 
-grunt.loadNpmTasks('grunt-browserify');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-eslint');
 grunt.loadNpmTasks('grunt-mocha');
+grunt.loadNpmTasks('grunt-webpack');
+
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy', 'browserify']);
+grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack']);
 grunt.registerTask('default', ['build']);

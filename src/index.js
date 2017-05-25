@@ -6,7 +6,7 @@ import { configureStore
        , getStore} from './redux';
 
 function initialize() {
-    configureStore({action: {title: 'React starter'}});
+    configureStore({action: {title: 'React 21'}});
 
     ReactDOM.render( <Provider store={getStore()}>
                         <App />
