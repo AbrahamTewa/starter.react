@@ -11,11 +11,11 @@
     "build": "grunt build",
     "debugger": "devtool build/index.js",
     "doc": "grunt clean:doc && jsdoc -c jsdoc.json --readme README.md",
-    "linter": "grunt lint",
+    "lint": "grunt lint",
     "start": "node build/index.js ",
     "test": "mocha src\\**\\__test__\\**\\*.js --opts mocha.opts -R spec",
     "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha -- src\\**\\__test__\\**\\*.js --opts mocha.opts -R spec",
-    "watcher": "grunt watch"
+    "watch": "grunt watch"
   },
   "repository": {
     "type": "git",
@@ -31,8 +31,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-istanbul": "^3.0.0",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.23.0",
@@ -40,7 +39,9 @@
     "babel-preset-es2016": "^6.16.0",
     "babel-preset-es2017": "^6.16.0",
     "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.24.1",
     "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "devtool": "^2.3.0",
     "eslint": "^3.11.1",
     "eslint-plugin-react": "^7.0.1",
@@ -49,20 +50,21 @@
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-mocha": "^1.0.2",
-    "grunt-webpack": "^3.0.0",
+    "grunt-sass": "^2.0.0",
+    "grunt-stylelint": "^0.8.0",
     "istanbul": "^1.1.0-alpha.1",
     "jsdoc": "^3.4.3",
-    "jsdoc-oblivion": "0.0.4",
+    "jsdoc-oblivion": "^0.0.5",
+    "load-grunt-tasks": "^3.5.2",
     "minami": "^1.1.1",
     "mocha": "^3.2.0",
     "plato": "^1.7.0",
-    "react-hot-loader": "next",
-    "source-map-support": "^0.4.6",
-    "webpack": "^2.6.0",
-    "webpack-dev-server": "^2.4.5"
+    "source-map-support": "^0.4.6"
+  },
+  "optionalDependencies": {
+    "fsevents": "*"
   }
 }

@@ -5,8 +5,11 @@ import { Provider } from 'react-redux';
 import { configureStore
        , getStore} from './redux';
 
+/**
+ * Initialize the application
+ */
 function initialize() {
-    configureStore({action: {title: 'React 21'}});
+    configureStore({action: {title: 'React starter'}});
 
     ReactDOM.render( <Provider store={getStore()}>
                         <App />
