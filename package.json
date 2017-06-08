@@ -4,7 +4,7 @@
   "description": "Starter kit for ReactJS",
   "author": "Abraham Tewa",
   "license": "MIT",
-  "homepage": "https://github.com/AbrahamTewa/starter.nodejs.webapp",
+  "homepage": "https://github.com/AbrahamTewa/starter.reactjs",
   "private": true,
   "scripts": {
     "analysis": "plato --dir analysis --recurse --eslint .eslintrc.json --title \"Starter server\" src/**/*.js",
@@ -15,7 +15,7 @@
     "start": "node build/index.js ",
     "test": "mocha src\\**\\__test__\\**\\*.js --opts mocha.opts -R spec",
     "test-cov": "istanbul cover ./node_modules/mocha/bin/_mocha -- src\\**\\__test__\\**\\*.js --opts mocha.opts -R spec",
-    "watch": "grunt watch"
+    "watch": "webpack --progress --watch"
   },
   "repository": {
     "type": "git",
@@ -23,14 +23,18 @@
   },
   "dependencies": {
     "es6-error": "^4.0.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.3",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "sass-loader": "^6.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
+    "babel-loader": "^7.0.0",
     "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -42,8 +46,10 @@
     "babel-register": "^6.24.1",
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
+    "css-loader": "^0.28.4",
     "devtool": "^2.3.0",
     "eslint": "^3.11.1",
+    "eslint-loader": "^1.7.1",
     "eslint-plugin-react": "^7.0.1",
     "grunt": "^1.0.1",
     "grunt-babel": "^6.0.0",
@@ -55,6 +61,7 @@
     "grunt-mocha": "^1.0.2",
     "grunt-sass": "^2.0.0",
     "grunt-stylelint": "^0.8.0",
+    "grunt-webpack": "^3.0.0",
     "istanbul": "^1.1.0-alpha.1",
     "jsdoc": "^3.4.3",
     "jsdoc-oblivion": "^0.0.5",
@@ -62,7 +69,11 @@
     "minami": "^1.1.1",
     "mocha": "^3.2.0",
     "plato": "^1.7.0",
-    "source-map-support": "^0.4.6"
+    "sasslint-loader": "^0.0.1",
+    "source-map-support": "^0.4.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "optionalDependencies": {
     "fsevents": "*"

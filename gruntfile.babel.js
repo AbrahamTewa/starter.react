@@ -70,9 +70,14 @@ grunt.initConfig({
                      , spawn   : false}
         }
     }
+
+    , webpack: { auto       : require('./webpack.config')
+               , development: require('./webpack.development')
+               , production : require('./webpack.production')}
+
 });
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'browserify:build']);
+grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:auto']);
 grunt.registerTask('default', ['build']);
