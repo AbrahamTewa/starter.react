@@ -1,7 +1,12 @@
 import path from 'path';
 
+console.log('Webpack config: Development');
+
 const configJavascript =
     { devtool : 'source-map'
+    , devServer: { hot: true
+                 , contentBase: path.resolve(__dirname, 'build')
+                 , publicPath: '/'}
     , entry   : ['./src/index.js'
                 ,'./src/index.scss']
     , module  : { rules: [{ enforce: 'pre'
@@ -10,11 +15,11 @@ const configJavascript =
                           , exclude: /node_modules/
                           , use    : ['eslint-loader']}
 
-                         ,{ enforce: 'pre'
+/*                         ,{ enforce: 'pre'
                           , test   : /\.s[a|c]ss$/
                           , include: [path.resolve(__dirname), 'src']
                           , exclude: /node_modules/
-                          , use: [{loader: 'sasslint-loader'}]}
+                          , use: [{loader: 'sasslint-loader'}]} */
 
                         ,{ test   : /\.js$/
                          , include: [path.resolve(__dirname), 'src']
