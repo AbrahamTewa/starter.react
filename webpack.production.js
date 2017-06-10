@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 import path from 'path';
 
 const config = { devtool : 'source-map'

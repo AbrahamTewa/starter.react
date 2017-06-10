@@ -1,11 +1,10 @@
 // ******************** Imports ********************
-import React from 'react';
+import React     from 'react';
 import PropTypes from 'prop-types';
 
 // ******************** Container ********************
 
 function Input({title, onkeypress}) {
-
     return (<input
                 type="text"
                 value={title}

@@ -1,6 +1,6 @@
-import React from 'react';
+import React        from 'react';
 import CurrentTitle from '../containers/CurrentTitle';
-import InputTitle from '../containers/InputTitle';
+import InputTitle   from '../containers/InputTitle';
 
 function App() {
     return (<div>

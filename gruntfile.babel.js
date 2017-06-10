@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 // ******************** NodeJS packages ********************
 import grunt from 'grunt';
 
@@ -45,7 +47,7 @@ grunt.initConfig({
 
     , mocha : {
         test: {
-            src: ['src\\**\\__test__\\**\\*.js'],
+            src: ['src\\**\\__tests__\\**\\*.js'],
             opts : 'mocha.opts'
         }
     }
@@ -79,5 +81,5 @@ grunt.initConfig({
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:auto']);
+grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:auto', 'sass']);
 grunt.registerTask('default', ['build']);

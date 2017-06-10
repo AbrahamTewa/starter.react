@@ -6,4 +6,4 @@ node_js:
   - "0.6"
   - "iojs"
 script:
-  - npm run builder
+  - npm run build
