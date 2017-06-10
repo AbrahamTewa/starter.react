@@ -11,15 +11,3 @@ exports[`Basic tests Simple string 1`] = `
   One simple string
 </h1>
 `;
-
-exports[`Snapshots Emtpy string 1`] = `
-<h1>
-  
-</h1>
-`;
-
-exports[`Snapshots Simple string 1`] = `
-<h1>
-  One simple string
-</h1>
-`;
