@@ -7,23 +7,9 @@ require('load-grunt-tasks')(grunt);
 
 // ******************** Script ********************
 
-const buildConfig = { options:  { browserifyOptions: {debug: true}
-                                , transform: [['babelify', {presets: ['es2015', 'react']}]] }
-                    , files: { 'build/index.js' : 'src/index.js' } };
-
-const buildAndWatch = {...buildConfig
-                      , watch: true};
-
 grunt.initConfig({
-
-    browserify: { build: buildConfig
-                , watch: buildAndWatch
-                , watchifyOptions: {delay: 40} }
-
-    , clean: {
-        build: ['build/'],
-        doc : ['doc/']
-    }
+    clean: { build: ['build/']
+           , doc  : ['doc/']}
 
     , copy: {
         html: {
@@ -37,40 +23,42 @@ grunt.initConfig({
     }
 
     , eslint: {
-        target: {
+        src: {
             expand: true
           , cwd   : 'src'
           , src   : ['**/*.js']
-          , dest  : 'build/'
           , ext   : '.js'}
+      , tools: ['gruntfile.js'
+               ,'gruntfile.babel.js'
+               ,'server.js'
+               ,'webpack.config.js'
+               ,'webpack.development.js'
+               ,'webpack.production.js']
     }
 
-    , mocha : {
-        test: {
-            src: ['src\\**\\__tests__\\**\\*.js'],
-            opts : 'mocha.opts'
-        }
+    , jsonlint: {
+        options: { format: true
+                 , indent: 2}
+      , src  : { expand: true
+               , cwd   : 'src'
+               , src   : '**/*.json'}
+      , tools: { expand: false
+               , cwd   : '.'
+               , src   : ['.json'
+                         ,'.babelrc']}
     }
 
     , sass: {
         options: {
             sourceMap: true
         }
-      , build: {
-          files: { 'build/index.css' : 'src/index.scss'}
-      }
+        , build: {
+            files: { 'build/index.css' : 'src/index.scss'}
+        }
     }
 
-    , watch: {
-        scripts: {
-            files: ['src/**/*.*'
-                   , 'gruntfile.js'
-                   , 'package.json'
-                   , '.eslintrc.json']
-          , tasks: ['eslint', 'copy:html', 'browserify:watch', 'sass']
-          , options: { atBegin : true
-                     , spawn   : false}
-        }
+    , sasslint: {
+        src: ['src/**/*.s+(a|c)ss']
     }
 
     , webpack: { auto       : require('./webpack.config')
@@ -80,6 +68,6 @@ grunt.initConfig({
 });
 
 // Registering all tasks
-grunt.registerTask('lint', ['eslint']);
+grunt.registerTask('lint', ['eslint', 'sasslint', 'jsonlint']);
 grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:auto', 'sass']);
 grunt.registerTask('default', ['build']);
