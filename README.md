@@ -1,18 +1,21 @@
 # starter.reactjs
 A starter for developing react project.
 
-## Tools configured
+## Tools configured/installed
 
-- [Babel (ES2015)](http://babeljs.io/)
+- [Babel](http://babeljs.io/)
 - [EditorConfig](http://editorconfig.com/)
+- [enzyme](http://airbnb.io/enzyme/)
 - [ESLint](http://eslint.org/)
+- [jest](https://facebook.github.io/jest/)
+- [json-lint](https://github.com/zaach/jsonlint)
 - [Grunt](http://gruntjs.com/)
 - [Plato](https://github.com/es-analysis/plato)
-- Source maps (for both javascript and css)
+- [sass-lint](https://github.com/sasstools/sass-lint)
+- [webpack 2](https://webpack.js.org/)
 
 ### Todo
 - [Istanbul](https://istanbul.js.org/)
-- [Mocha](https://mochajs.org/)
 - [jsDoc](http://usejsdoc.org/)
 
 ## Usage
@@ -35,13 +38,42 @@ The output result is stored in the `analysis` directory.
 ### `npm run build`
 Run the build of the application.
 The builder will create a new folder "build" in which the build will be added.
-Note, the build will first lint the source.
+
+The build will :
+1. Lint the repository
+    a. [eslint](http://eslint.org/)
+    b. [sass-lint](https://github.com/sasstools/sass-lint) 
+    c. [json-lint](https://github.com/zaach/jsonlint)
+2. Clean the `build` folder
+3. Copy `src/index.html` into the `build` folder
+4. Make the build (using webpack)
+5. Creating SASS files
 
 ### `npm run lint`
-Run the linter on the source using [ESLint](http://eslint.org)/.
+Running all linters on the source files and the tooling files (e.g `.babelrc`).
 
-### `npm run watch`
-Will run a watcher that will rebuild the app each time one of these file is modified :
+The linters are :
+* [eslint](http://eslint.org/)
+* [sass-lint](https://github.com/sasstools/sass-lint) 
+* [json-lint](https://github.com/zaach/jsonlint)
+
+### `npm start`
+Start a simple [express](http://expressjs.com/) server to serve the HTML file.
+
+### `npm test`
+### `npm run test`
+### `npm run test-u`
+### `npm run test-cov`
+Execute all unit tests.
+Tests use [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/).
+
+The `test-u` run tests and update [jest](https://facebook.github.io/jest/) snapshots.
+The `test-cov` will run tests and coverage.
+
+### `npm watch`
+Will run a [webpack](https://webpack.js.org/) in watch mode to rebuild the app each time a file in the `src` folder is updated.
+
+The [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) (HMR) is enabled on javascript and sass files. Before each reloads, [eslint](http://eslint.org/) and [sass-lint](https://github.com/sasstools/sass-lint) are runned.
 
 ### Todo
 

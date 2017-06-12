@@ -69,5 +69,5 @@ grunt.initConfig({
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint', 'sasslint', 'jsonlint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:auto', 'sass']);
+grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:production', 'sass']);
 grunt.registerTask('default', ['build']);
