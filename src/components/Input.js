@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 function Input({title, onkeypress}) {
     return (<input
                 type="text"
-                value={title}
+                defaultValue={title}
                 onChange={onkeypress} />);
 
 }

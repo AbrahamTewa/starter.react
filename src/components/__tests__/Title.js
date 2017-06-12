@@ -12,7 +12,7 @@ describe('Basic tests', () => {
         let shallowComponent;
         let title;
 
-        title = <Title title=""/>;
+        title = <Title/>;
 
         // Snapshot
         render           = renderer.create(title);
@@ -30,7 +30,7 @@ describe('Basic tests', () => {
         let titleText;
 
         titleText = 'One simple string';
-        title = <Title title={titleText} />;
+        title = <Title>{titleText}</Title>;
 
         // Snapshot
         render = renderer.create(title);

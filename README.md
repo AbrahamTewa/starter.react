@@ -3,20 +3,21 @@ A starter for developing react project.
 
 ## Tools configured/installed
 
-- [Babel](http://babeljs.io/)
-- [EditorConfig](http://editorconfig.com/)
-- [enzyme](http://airbnb.io/enzyme/)
-- [ESLint](http://eslint.org/)
-- [jest](https://facebook.github.io/jest/)
+- [Babel](http://babeljs.io)
+- [EditorConfig](http://editorconfig.com)
+- [Enzyme](http://airbnb.io/enzyme)
+- [ESLint](http://eslint.org)
+- [Jest](https://facebook.github.io/jest)
+- [JSDoc](http://usejsdoc.org)
 - [json-lint](https://github.com/zaach/jsonlint)
-- [Grunt](http://gruntjs.com/)
+- [Grunt](http://gruntjs.com)
 - [Plato](https://github.com/es-analysis/plato)
 - [sass-lint](https://github.com/sasstools/sass-lint)
-- [webpack 2](https://webpack.js.org/)
+- [Storybook](https://storybook.js.org)
+- [Webpack 2](https://webpack.js.org)
 
 ### Todo
 - [Istanbul](https://istanbul.js.org/)
-- [jsDoc](http://usejsdoc.org/)
 
 ## Usage
 
@@ -49,6 +50,15 @@ The build will :
 4. Make the build (using webpack)
 5. Creating SASS files
 
+### `npm run doc`
+Build the documentation of the project :
+- [JSDoc](http://usejsdoc.org)
+- [Storybook](https://storybook.js.org)
+
+To build individually each project, use on of the following:
+* `npm run doc:jsdoc`
+* `npm run doc:storybook` 
+
 ### `npm run lint`
 Running all linters on the source files and the tooling files (e.g `.babelrc`).
 
@@ -72,8 +82,11 @@ The `test-cov` will run tests and coverage.
 
 ### `npm watch`
 Will run a [webpack](https://webpack.js.org/) in watch mode to rebuild the app each time a file in the `src` folder is updated.
-
 The [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) (HMR) is enabled on javascript and sass files. Before each reloads, [eslint](http://eslint.org/) and [sass-lint](https://github.com/sasstools/sass-lint) are runned.
+
+### `npm watch:storybook`
+Enable [storybook](https://storybook.js.org) development server. Enable this while developing your story book to enable file watch and HMR.
+Storybook is served by default on [`http://localhost:9001`](localhost:9001).
 
 ### Todo
 

@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 /**
  * Title of the application
- * @param {string} title
+ * @param {string} children
  * @returns {XML}
  * @constructor
  */
-function Title({title}) {
-    return <h1>{title}</h1>;
+function Title({children}) {
+    return <h1>{children}</h1>;
 }
 
-Title.propTypes = { title: PropTypes.string.isRequired };
+Title.propTypes = { children: PropTypes.string };
 
 export default Title;
 

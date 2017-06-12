@@ -8,8 +8,11 @@ require('load-grunt-tasks')(grunt);
 // ******************** Script ********************
 
 grunt.initConfig({
-    clean: { build: ['build/']
-           , doc  : ['doc/']}
+    clean: { analysis : ['reports/analysis']
+           , build    : ['build/']
+           , coverage : ['reports/coverage']
+           , jsdoc    : ['doc/jsdoc/']
+           , storybook: ['doc/storybook/']}
 
     , copy: {
         html: {
@@ -23,11 +26,14 @@ grunt.initConfig({
     }
 
     , eslint: {
-        src: {
-            expand: true
-          , cwd   : 'src'
-          , src   : ['**/*.js']
-          , ext   : '.js'}
+        src: { expand: true
+             , cwd   : 'src'
+             , src   : ['**/*.js']
+             , ext   : '.js'}
+      , storybook: { expand: true
+                   , cwd   : 'storybook'
+                   , src   : ['**/*.js']
+                   , ext   : '.js'}
       , tools: ['gruntfile.js'
                ,'gruntfile.babel.js'
                ,'server.js'
