@@ -1,4 +1,4 @@
-# starter.reactjs
+# starter.reactjs &middot; [![Build Status](https://travis-ci.org/AbrahamTewa/starter.reactjs.svg?branch=master)](https://travis-ci.org/AbrahamTewa/starter.reactjs)
 A starter for developing react project.
 
 ## Tools configured/installed
