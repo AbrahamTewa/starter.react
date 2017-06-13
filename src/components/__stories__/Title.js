@@ -10,5 +10,5 @@ storiesOf('Button', module)
       <Title/>
   ))
   .add('with some emoji', () => (
-    <Title>Emoji</Title>
+    <Title>tox</Title>
   ));
