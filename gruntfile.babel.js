@@ -5,6 +5,8 @@ import grunt from 'grunt';
 
 require('load-grunt-tasks')(grunt);
 
+//const isProctionTarget = process.env.NODE_ENV === 'production';
+
 // ******************** Script ********************
 
 grunt.initConfig({
@@ -22,6 +24,15 @@ grunt.initConfig({
                 src: ['**/*.htm', '**/*.html'],
                 dest: 'build/'
             }]
+        }
+    },
+
+    cssmin: {
+        options: {sourceMap: true},
+        target: {
+            files: {
+                'build/index.css': 'build/index.css'
+            }
         }
     }
 
@@ -67,13 +78,12 @@ grunt.initConfig({
         src: ['src/**/*.s+(a|c)ss']
     }
 
-    , webpack: { auto       : require('./webpack.config')
-               , development: require('./webpack.development')
-               , production : require('./webpack.production')}
-
+    /*, webpack: { auto       : require('./webpack.config').default
+               , development: require('./webpack.development').default
+               , production : require('./webpack.production').default }*/
 });
 
 // Registering all tasks
 grunt.registerTask('lint', ['eslint', 'sasslint', 'jsonlint']);
-grunt.registerTask('build', ['eslint', 'clean:build', 'copy:html', 'webpack:production', 'sass']);
+grunt.registerTask('pre-build', ['lint', 'clean:build', 'copy:html', 'sass', 'cssmin']);
 grunt.registerTask('default', ['build']);
