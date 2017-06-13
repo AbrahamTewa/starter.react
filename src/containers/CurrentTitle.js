@@ -3,7 +3,7 @@ import Title from '../components/Title';
 
 
 function mapStateToProps (state) {
-    return { title: state.action.title };
+    return { children: state.action.title };
 }
 
 const CurrentTitle = connect(mapStateToProps)(Title);

@@ -13,7 +13,7 @@ function Input({title, onkeypress}) {
 }
 
 Input.propTypes = { onkeypress: PropTypes.func
-                  , title : PropTypes.string.isRequired};
+                  , title     : PropTypes.string.isRequired};
 
 // ******************** Export ********************
 export default Input;

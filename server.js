@@ -1,5 +1,7 @@
 /* eslint-env node */
 
+// Will run an express server serving build files
+
 let express = require('express');
 let app = express();
 const port = 3000;
