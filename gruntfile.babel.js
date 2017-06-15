@@ -1,11 +1,11 @@
 /* eslint-env node */
 
 // ******************** NodeJS packages ********************
-import grunt from 'grunt';
+import grunt       from 'grunt';
+import gulp        from 'gulp';
+import styleguide  from 'sc5-styleguide';
 
 require('load-grunt-tasks')(grunt);
-
-//const isProctionTarget = process.env.NODE_ENV === 'production';
 
 // ******************** Script ********************
 
@@ -53,6 +53,22 @@ grunt.initConfig({
                ,'webpack.production.js']
     }
 
+    , gulp: {
+        'styleguide-generate':
+            function() {
+                let outputPath = 'output';
+                return gulp.src(['']).pipe(styleguide.generate({ server  : true
+                                                               , title   : 'starter.React'
+                                                               , rootPath: outputPath}))
+                                     .pipe(gulp.dest(outputPath));
+            },
+        'styleguide-applystyles':
+            function() {
+                gulp.src('main.scss').pipe(styleguide.applyStyles())
+                                     .pipe(gulp.dest('output'));
+            }
+    }
+
     , jsonlint: {
         options: { format: true
                  , indent: 2}
@@ -61,7 +77,8 @@ grunt.initConfig({
                , src   : '**/*.json'}
       , tools: { expand: false
                , cwd   : '.'
-               , src   : ['.json'
+               , src   : ['*.json'
+                         ,'.*.json'
                          ,'.babelrc']}
     }
 
@@ -74,16 +91,22 @@ grunt.initConfig({
         }
     }
 
-    , sasslint: {
-        src: ['src/**/*.s+(a|c)ss']
+    , stylelint: {
+        options: {
+            configFile: '.stylelintrc.json'
+        },
+        src: ['src/**/*.{css,scss,sass}']
     }
 
-    /*, webpack: { auto       : require('./webpack.config').default
-               , development: require('./webpack.development').default
-               , production : require('./webpack.production').default }*/
+    , watch: {
+        scss: {
+            files: '**/*.scss',
+            tasks: ['sass', 'gulp:styleguide-generate', 'gulp:styleguide-applystyles']
+        }
+    }
 });
 
 // Registering all tasks
-grunt.registerTask('lint', ['eslint', 'sasslint', 'jsonlint']);
+grunt.registerTask('lint', ['eslint', 'stylelint', 'jsonlint']);
 grunt.registerTask('pre-build', ['lint', 'clean:build', 'copy:html', 'sass', 'cssmin']);
 grunt.registerTask('default', ['build']);

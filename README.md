@@ -19,7 +19,7 @@ The goal here is simple: *start immediately to code*. No questions asked. Just c
 - [json-lint](https://github.com/zaach/jsonlint)
 - [Grunt](http://gruntjs.com)
 - [Plato](https://github.com/es-analysis/plato)
-- [sass-lint](https://github.com/sasstools/sass-lint)
+- [stylelint](https://stylelint.io/)
 - [Storybook](https://storybook.js.org)
 - [Webpack 2](https://webpack.js.org)
 
@@ -69,7 +69,7 @@ The builder will create a new `build/` folder in which the build will be added, 
 
 1. Lint the repository
     a. [eslint](http://eslint.org/)
-    b. [sass-lint](https://github.com/sasstools/sass-lint) 
+    b. [stylelint](https://stylelint.io/) 
     c. [json-lint](https://github.com/zaach/jsonlint)
 2. Clean the `build` folder
 3. Copy `src/index.html` into the `build` folder
@@ -92,7 +92,7 @@ Running all linters on the source files and the tooling files (e.g `.babelrc`).
 
 The linters are :
 * [eslint](http://eslint.org/)
-* [sass-lint](https://github.com/sasstools/sass-lint) 
+* [stylelint](https://stylelint.io/) 
 * [json-lint](https://github.com/zaach/jsonlint)
 
 ### `npm start`
@@ -111,9 +111,9 @@ Like `npm test`, but will also update [jest](https://facebook.github.io/jest/) s
 ### `npm run test-cov`
 The `test-cov` will run tests and coverage.
 
-### `npm watch`
+### `npm run watch`
 Will run a [webpack](https://webpack.js.org/) in watch mode to rebuild the app each time a file in the `src` folder is updated.
-The [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) (HMR) is enabled on javascript and sass files. Before each reloads, [eslint](http://eslint.org/) and [sass-lint](https://github.com/sasstools/sass-lint) are runned.
+The [Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/) (HMR) is enabled on javascript and sass files. Before each reloads, [eslint](http://eslint.org/) and [stylelint](https://stylelint.io/) are runned.
 
 ### `npm watch:storybook`
 Enable [storybook](https://storybook.js.org) development server. The server will watch file modifications and update in real time your

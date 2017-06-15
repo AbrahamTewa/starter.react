@@ -1,6 +1,9 @@
 /* eslint-env node */
 
 import path from 'path';
+import StyleLintPlugin from 'stylelint-webpack-plugin';
+
+const styleLintOptions = {configFile: '.stylelintrc.json'};
 
 export default { devtool : 'source-map'
                , devServer: { hot: true
@@ -14,11 +17,11 @@ export default { devtool : 'source-map'
                                      , exclude: /node_modules/
                                      , use    : ['eslint-loader']}
 
-                                    ,{ enforce: 'pre'
+/*                                    ,{ enforce: 'pre'
                                      , test   : /\.s[a|c]ss$/
                                      , include: [path.resolve(__dirname), 'src']
                                      , exclude: /node_modules/
-                                     , use: [{loader: 'sasslint-loader'}]}
+                                     , use: [{loader: 'sasslint-loader'}]} */
 
                                     ,{ test   : /\.js$/
                                      , include: [path.resolve(__dirname), 'src']
@@ -36,4 +39,5 @@ export default { devtool : 'source-map'
                , output  : { path: path.resolve(__dirname, 'build')
                            , filename: 'index.js'
                            , publicPath: '/'}
+               , plugins: [new StyleLintPlugin(styleLintOptions)]
                , resolve : { modules: ['node_modules']}};
