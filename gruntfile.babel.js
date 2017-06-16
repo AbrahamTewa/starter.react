@@ -1,9 +1,7 @@
 /* eslint-env node */
 
 // ******************** NodeJS packages ********************
-import grunt       from 'grunt';
-import gulp        from 'gulp';
-import styleguide  from 'sc5-styleguide';
+import grunt from 'grunt';
 
 require('load-grunt-tasks')(grunt);
 
@@ -53,22 +51,6 @@ grunt.initConfig({
                ,'webpack.production.js']
     }
 
-    , gulp: {
-        'styleguide-generate':
-            function() {
-                let outputPath = 'output';
-                return gulp.src(['']).pipe(styleguide.generate({ server  : true
-                                                               , title   : 'starter.React'
-                                                               , rootPath: outputPath}))
-                                     .pipe(gulp.dest(outputPath));
-            },
-        'styleguide-applystyles':
-            function() {
-                gulp.src('main.scss').pipe(styleguide.applyStyles())
-                                     .pipe(gulp.dest('output'));
-            }
-    }
-
     , jsonlint: {
         options: { format: true
                  , indent: 2}
@@ -96,13 +78,6 @@ grunt.initConfig({
             configFile: '.stylelintrc.json'
         },
         src: ['src/**/*.{css,scss,sass}']
-    }
-
-    , watch: {
-        scss: {
-            files: '**/*.scss',
-            tasks: ['sass', 'gulp:styleguide-generate', 'gulp:styleguide-applystyles']
-        }
     }
 });
 

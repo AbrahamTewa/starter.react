@@ -2,9 +2,8 @@
 A starter for developing react redux projects.
 
 ## Philosophy of the starter
-I've created this starter willingly very simple: only few lines of codes, just enough to illustrate the usage of react, redux, [jest](https://facebook.github.io/jest) and [storybook](https://storybook.js.org). All the tools around are configured and working.
+I've created this starter very simple: only few lines of codes, just enough to illustrate the usage of react, redux, [jest](https://facebook.github.io/jest) and [storybook](https://storybook.js.org). All the tools around are configured and working.
 The goal here is simple: *start immediately to code*. No questions asked. Just coding.
-
 
 ## Content of the starter
 
@@ -46,14 +45,28 @@ The goal here is simple: *start immediately to code*. No questions asked. Just c
 
 ## Usage
 
-``` 
+```bash 
 git clone https://github.com/AbrahamTewa/starter.reactjs.git
 cd starter.reactjs
 npm install
+```
+
+**During development:**
+```bash
+npm run watch
+```
+
+**To build for production mode:**
+```bash
 npm run build
 ```
 
-Then launch the `build/index.html` file in your browser.
+**To serve the application (after build)**
+```bash
+npm start
+```
+
+or you can launch the `build/index.html` file in your browser.
 
 ## Available commands
 
@@ -105,7 +118,6 @@ Execute all unit tests.
 Tests use [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/).
 
 ### `npm run test-u`
-
 Like `npm test`, but will also update [jest](https://facebook.github.io/jest/) snapshots.
 
 ### `npm run test-cov`
