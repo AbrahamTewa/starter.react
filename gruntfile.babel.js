@@ -7,6 +7,7 @@ require('load-grunt-tasks')(grunt);
 
 // ******************** Script ********************
 
+/*eslint indent:0*/
 grunt.initConfig({
     clean: { analysis : ['reports/analysis']
            , build    : ['build/']

@@ -41,7 +41,7 @@ The goal here is simple: *start immediately to code*. No questions asked. Just c
 
 ### Todo
 * Add [Selenium](http://www.seleniumhq.org/) for integration tests.
-* Add a styleguide generator
+* Add i18n functionanlities
 
 ## Usage
 
@@ -116,9 +116,6 @@ Alias: `npm run test`
 
 Execute all unit tests.
 Tests use [jest](https://facebook.github.io/jest/) and [enzyme](http://airbnb.io/enzyme/).
-
-### `npm run test-u`
-Like `npm test`, but will also update [jest](https://facebook.github.io/jest/) snapshots.
 
 ### `npm run test-cov`
 The `test-cov` will run tests and coverage.

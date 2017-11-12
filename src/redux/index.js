@@ -1,5 +1,4 @@
-import { combineReducers
-       , createStore } from 'redux';
+import { combineReducers, createStore } from 'redux';
 import actionReducer from './actions';
 
 // ******************** Global variables and constants ********************
@@ -8,8 +7,7 @@ let store;
 
 // ******************** Functions ********************
 function configureStore(initialState = {}) {
-    store = createStore( reducers
-                       , initialState);
+    store = createStore( reducers, initialState);
 
 }
 
@@ -18,5 +16,4 @@ function getStore() {
 }
 
 // ******************** Exports ********************
-export { configureStore
-       , getStore};
+export { configureStore, getStore};

@@ -2,6 +2,7 @@
 
 import path from 'path';
 
+/*eslint indent:0*/
 export default { devtool : 'source-map'
                , entry   : ['./src/index.js']
                , output  : { path: path.resolve(__dirname, 'build')

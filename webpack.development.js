@@ -5,6 +5,7 @@ import StyleLintPlugin from 'stylelint-webpack-plugin';
 
 const styleLintOptions = {configFile: '.stylelintrc.json'};
 
+/*eslint indent:0*/
 export default { devtool : 'source-map'
                , devServer: { hot: true
                             , contentBase: path.resolve(__dirname, 'build')

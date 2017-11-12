@@ -5,10 +5,10 @@ import { storiesOf } from '@storybook/react';
 
 import Title from '../Title';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-      <Title/>
-  ))
-  .add('with some emoji', () => (
-    <Title>tox</Title>
-  ));
+storiesOf('Title', module)
+    .add('without text', () => (
+        <Title/>
+    ))
+    .add('with text', () => (
+        <Title>tox</Title>
+    ));
