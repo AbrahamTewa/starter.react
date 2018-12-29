@@ -1,21 +1,34 @@
-// ******************** Imports ********************
-import React     from 'react';
+// ============================================================
+// Import packages
+import React from 'react';
 import PropTypes from 'prop-types';
 
-// ******************** Container ********************
+// ============================================================
+// Container
 
-function Input({title, onkeypress}) {
+/**
+ * Input container
+ *
+ * @param {string} title
+ * @param {function} onkeypress
+ * @returns {React}
+ * @constructor
+ */
+function Input({ title, onkeypress }) {
     return (
         <input
             type="text"
             defaultValue={title}
-            onChange={onkeypress} />);
-
+            onChange={onkeypress}
+        />
+    );
 }
 
 Input.propTypes = {
-    onkeypress: PropTypes.func
-    , title     : PropTypes.string.isRequired};
+    onkeypress: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
+};
 
-// ******************** Export ********************
+// ============================================================
+// Exports
 export default Input;

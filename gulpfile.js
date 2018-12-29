@@ -16,7 +16,6 @@ sass.compiler = require('node-sass');
 const DIST_FOLDER_PATH = './build';
 const DOC_FOLDER_PATH = './doc';
 const JSDOC_FOLDER_PATH = path.resolve(DOC_FOLDER_PATH, 'jsdoc');
-const REPORT_ANALYSIS_FOLDER_PATH = './reports/analysis/';
 const COVERAGE_REPORT_FOLDER_PATH = './reports/coverage';
 const REPORT_FOLDER_PATH = './reports';
 const STORYBOOK_FOLDER_PATH = path.resolve(DOC_FOLDER_PATH, 'storybook');
@@ -42,10 +41,6 @@ gulp.task('clean:doc:storybook', () => del([
     STORYBOOK_FOLDER_PATH,
 ]));
 
-gulp.task('clean:report:analysis', () => del([
-    REPORT_ANALYSIS_FOLDER_PATH,
-]));
-
 gulp.task('clean:report:coverage', () => del([
     COVERAGE_REPORT_FOLDER_PATH,
 ]));
@@ -56,31 +51,26 @@ gulp.task('clean:reports', () => del([
 
 // ==============================
 // Build tasks
-gulp.task('build:copy:html', () =>
-    gulp.src('src/**/*.htm?(l)')
-        .pipe(gulp.dest(DIST_FOLDER_PATH)));
+gulp.task('build:copy:html', () => gulp.src('src/**/*.htm?(l)')
+    .pipe(gulp.dest(DIST_FOLDER_PATH)));
 
 // ==============================
 // Minify task
 
-gulp.task('minify:css',() =>
-    gulp.src(path.resolve(DIST_FOLDER_PATH, '**', '*.css'))
-        .pipe(sourcemaps.init())
-        .pipe(cleanCSS())
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(DIST_FOLDER_PATH))
-);
+gulp.task('minify:css', () => gulp.src(path.resolve(DIST_FOLDER_PATH, '**', '*.css'))
+    .pipe(sourcemaps.init())
+    .pipe(cleanCSS())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(DIST_FOLDER_PATH)));
 
 // ==============================
 // Transpilation tasks
 
-gulp.task('transpile:sass', () =>
-    gulp.src('./src/**/*.@(sass|scss)')
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(DIST_FOLDER_PATH))
-);
+gulp.task('transpile:sass', () => gulp.src('./src/**/*.@(sass|scss)')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(DIST_FOLDER_PATH)));
 
 // ============================================================
 // Composed tasks

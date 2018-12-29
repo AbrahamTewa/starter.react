@@ -1,6 +1,6 @@
 // ============================================================
 // Import packages
-import React    from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Provider } from 'react-redux';
@@ -11,9 +11,11 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 // ============================================================
 // Import modules
-import { configureStore, getStore} from './redux';
-import App from './scenes/App';
-import Authentication from './scenes/Authentication';
+import { configureStore, getStore } from './redux';
+import {
+    App,
+    Authentication,
+} from './scenes';
 
 // ============================================================
 // Module constants and variables
@@ -26,7 +28,7 @@ const browserHistory = createBrowserHistory();
  * Initialize the application
  */
 function initialize() {
-    configureStore({action: {title: 'React starter'}});
+    configureStore({ action: { title: 'React starter' } });
 
     // Add the reducer to your store on the `routing` key
     const store = getStore();
@@ -43,13 +45,13 @@ function initialize() {
         <Provider store={store}>
             <Router history={history}>
                 <div>
-                    <Route path="/" component={ App } />
-                    <Route path="/login" component={ Authentication }/>
-                    <Link to='/login'>Login</Link>
+                    <Route path="/" component={App} />
+                    <Route path="/login" component={Authentication} />
+                    <Link to="/login">Login</Link>
                 </div>
             </Router>
         </Provider>,
-        root
+        root,
     );
 }
 

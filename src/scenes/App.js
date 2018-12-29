@@ -1,11 +1,13 @@
 // ============================================================
 // Import packages
-import React        from 'react';
+import React from 'react';
 
 // ============================================================
 // Import containers
-import CurrentTitle from '../containers/CurrentTitle';
-import InputTitle   from '../containers/InputTitle';
+import {
+    CurrentTitle,
+    InputTitle,
+} from '../containers';
 
 // ============================================================
 // Scene
@@ -15,9 +17,12 @@ function App() {
         <div>
             <CurrentTitle />
             <div>
-                Set title: <InputTitle/>
+                Set title:
+                {' '}
+                <InputTitle />
             </div>
-        </div>);
+        </div>
+    );
 }
 
 // ============================================================

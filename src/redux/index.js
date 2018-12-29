@@ -1,15 +1,23 @@
+// ============================================================
+// Import packages
 import { combineReducers, createStore } from 'redux';
-import actionReducer from './actions';
 import { routerReducer } from 'react-router-redux';
 
-// ******************** Global variables and constants ********************
-const reducers = combineReducers( {
+// ============================================================
+// Import modules
+import actionReducer, * as actions from './actions';
+
+// ============================================================
+// Module constants and variables
+const reducers = combineReducers({
     action: actionReducer,
-    routing: routerReducer} );
+    routing: routerReducer,
+});
 
 let store;
 
-// ******************** Functions ********************
+// ============================================================
+// Functions
 function configureStore(initialState = {}) {
     store = createStore(reducers, initialState);
 }
@@ -18,5 +26,10 @@ function getStore() {
     return store;
 }
 
-// ******************** Exports ********************
-export { configureStore, getStore};
+// ============================================================
+// Exports
+export {
+    actions,
+    configureStore,
+    getStore,
+};

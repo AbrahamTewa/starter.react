@@ -8,7 +8,7 @@
     "./enzyme.setup.js"
   ],
   "testMatch": [
-    "**/__tests__/**/*.js"
+    "**/__tests__/**/*.js?(x)"
   ],
   "verbose": true
 }
