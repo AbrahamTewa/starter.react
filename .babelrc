@@ -1,13 +1,7 @@
 {
   "presets": [
-    "es2015",
-    "es2016",
-    "es2017",
-    "react"
-  ],
-  "plugins": [
-    "transform-react-jsx",
-    "transform-object-rest-spread"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
   "env": {
     "test": {

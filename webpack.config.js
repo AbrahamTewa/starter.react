@@ -1,6 +1,6 @@
 /* eslint-env es5,node */
 
-require('babel-register');
+require('@babel/register');
 
 let config;
 

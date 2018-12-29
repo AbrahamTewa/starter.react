@@ -23,12 +23,6 @@ export default { devtool : 'source-map'
                                      , exclude: /node_modules/
                                      , use    : ['eslint-loader']}
 
-/*                                    ,{ enforce: 'pre'
-                                     , test   : /\.s[a|c]ss$/
-                                     , include: [SOURCE_FOLDER]
-                                     , exclude: /node_modules/
-                                     , use: [{loader: 'sasslint-loader'}]} */
-
                                     ,{ test   : /\.js$/
                                      , include: [SOURCE_FOLDER]
                                      , exclude: /node_modules/
@@ -43,8 +37,7 @@ export default { devtool : 'source-map'
                                              ,{loader: 'sass-loader' }]}]}
 
                , output  : { path: BUILD_FOLDER
-                           , filename: 'index.js'
-                           , publicPath: '/'}
+                           , filename: 'index.js' }
                , plugins: [new StyleLintPlugin(styleLintOptions),
                            new HtmlWebpackPlugin()]
                , resolve : { modules: ['node_modules']}};

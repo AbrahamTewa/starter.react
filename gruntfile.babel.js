@@ -2,6 +2,7 @@
 
 // ******************** NodeJS packages ********************
 import grunt from 'grunt';
+import sass from 'node-sass';
 
 require('load-grunt-tasks')(grunt);
 
@@ -67,6 +68,7 @@ grunt.initConfig({
 
     , sass: {
         options: {
+            implementation: sass,
             sourceMap: true
         }
         , build: {
