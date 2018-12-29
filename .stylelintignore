@@ -1,0 +1,5 @@
+/build
+/doc
+/node_modules
+/reports
+**/*.json

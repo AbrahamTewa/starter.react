@@ -4,7 +4,7 @@ import path from 'path';
 import StyleLintPlugin   from 'stylelint-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-const styleLintOptions = {configFile: '.stylelintrc.json'};
+const styleLintOptions = {configFile: '.stylelintrc'};
 
 const BUILD_FOLDER = path.resolve(__dirname, 'build');
 const SOURCE_FOLDER = path.resolve(__dirname, 'src');
