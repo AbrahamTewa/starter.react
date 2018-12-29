@@ -10,7 +10,7 @@
   },
   "private": true,
   "scripts": {
-    "analysis": "gulp clean:report:analysis && plato --dir reports/analysis --recurse --title \"Starter React\" src/**/*.js",
+    "analysis": "gulp clean:report:analysis && es6-plato --dir reports/analysis --recurse --title \"Starter React\" src/**/*.js",
     "build": "cross-env NODE_ENV=production gulp prepare:build && webpack -p",
     "clean": "gulp clean",
     "doc": "run-p doc:*",
@@ -38,7 +38,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "remove": "^0.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -58,6 +59,7 @@
     "del": "^3.0.0",
     "enzyme": "^3.1.1",
     "enzyme-adapter-react-16": "^1.0.4",
+    "es6-plato": "^1.0.18",
     "eslint": "^5.11.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-jest": "^22.1.2",
@@ -78,7 +80,6 @@
     "minami": "^1.1.1",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
-    "plato": "^1.7.0",
     "react-test-renderer": "^16.1.0",
     "sass-loader": "^7.1.0",
     "source-map-support": "^0.5.0",
