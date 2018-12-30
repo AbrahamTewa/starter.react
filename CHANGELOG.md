@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/AbrahamTewa/starter.react/compare/v1.1.1...v1.2.0) (2018-12-30)
+
+
+### Bug Fixes
+
+* SonarCloud analysis ([11c268d](https://github.com/AbrahamTewa/starter.react/commit/11c268d))
+
+
+### Features
+
+* Update structure ([953fbbe](https://github.com/AbrahamTewa/starter.react/commit/953fbbe))
+
 ## [1.1.1](https://github.com/AbrahamTewa/starter.react/compare/v1.1.0...v1.1.1) (2018-12-30)
 
 
