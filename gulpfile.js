@@ -15,9 +15,10 @@ sass.compiler = require('node-sass');
 // Module's constants and variables
 const DIST_FOLDER_PATH = './build';
 const DOC_FOLDER_PATH = './doc';
-const JSDOC_FOLDER_PATH = path.resolve(DOC_FOLDER_PATH, 'jsdoc');
-const COVERAGE_REPORT_FOLDER_PATH = './reports/coverage';
 const REPORT_FOLDER_PATH = './reports';
+
+const COVERAGE_REPORT_FOLDER_PATH = path.resolve(REPORT_FOLDER_PATH, 'tests', 'unit', 'coverage');
+const JSDOC_FOLDER_PATH = path.resolve(DOC_FOLDER_PATH, 'jsdoc');
 const STORYBOOK_FOLDER_PATH = path.resolve(DOC_FOLDER_PATH, 'storybook');
 
 // ============================================================

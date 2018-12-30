@@ -1,5 +1,5 @@
 {
-  "coverageDirectory": "./reports/coverage/",
+  "coverageDirectory": "./reports/tests/unit/coverage/",
   "name": "starter.react",
   "roots": [
     "./src"

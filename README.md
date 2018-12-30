@@ -24,7 +24,7 @@ The goal here is simple: *start immediately to code*. No questions asked. Just c
 
 ### Directory structure
 
-| Folder             |         Description                  |       
+| Folder             |         Description                  |
 |--------------------|--------------------------------------|
 | `build/`           | The build result of your application. See `npm run build` bellow |
 | `doc/`             | All generated documentations         |
@@ -45,7 +45,7 @@ The goal here is simple: *start immediately to code*. No questions asked. Just c
 
 ## Usage
 
-```bash 
+```bash
 git clone https://github.com/AbrahamTewa/starter.reactjs.git
 cd starter.reactjs
 npm install
@@ -82,7 +82,7 @@ The builder will create a new `build/` folder in which the build will be added, 
 
 1. Lint the repository
     a. [eslint](http://eslint.org/)
-    b. [stylelint](https://stylelint.io/) 
+    b. [stylelint](https://stylelint.io/)
     c. [json-lint](https://github.com/zaach/jsonlint)
 2. Clean the `build` folder
 3. Copy `src/index.html` into the `build` folder
@@ -98,14 +98,14 @@ Build the documentation of the project :
 
 To build individually each project, use on of the following:
 * `npm run doc:jsdoc`
-* `npm run doc:storybook` 
+* `npm run doc:storybook`
 
 ### `npm run lint`
 Running all linters on the source files and the tooling files (e.g `.babelrc`).
 
 The linters are :
 * [eslint](http://eslint.org/)
-* [stylelint](https://stylelint.io/) 
+* [stylelint](https://stylelint.io/)
 * [json-lint](https://github.com/zaach/jsonlint)
 
 ### `npm start`
