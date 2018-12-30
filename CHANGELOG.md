@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/AbrahamTewa/starter.react/compare/v1.1.0...v1.1.1) (2018-12-30)
+
+
+### Bug Fixes
+
+* Readme.md ([3d7429d](https://github.com/AbrahamTewa/starter.react/commit/3d7429d))
+
 # [1.1.0](https://github.com/AbrahamTewa/starter.react/compare/v1.0.0...v1.1.0) (2018-12-30)
 
 
