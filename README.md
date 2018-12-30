@@ -1,8 +1,8 @@
 # starter.react
 
-[![Build Status](https://travis-ci.org/AbrahamTewa/starter.react.svg?branch=master)](https://travis-ci.org/AbrahamTewa/starter.react) [![Coverage Status](https://coveralls.io/repos/github/AbrahamTewa/starter.react/badge.svg?branch=master)](https://coveralls.io/github/AbrahamTewa/starter.react?branch=master) [![Dependency status](https://david-dm.org/AbrahamTewa/starter.react.svg)](https://david-dm.org/AbrahamTewa/starter.react) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07acca80a73449ed98b6b0b44c2800e3)](https://www.codacy.com/app/AbrahamTewa/starter.react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AbrahamTewa/starter.react&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/AbrahamTewa/starter.react.svg?branch=master)](https://travis-ci.org/AbrahamTewa/starter.react) [![Coverage Status](https://coveralls.io/repos/github/AbrahamTewa/starter.react/badge.svg?branch=master)](https://coveralls.io/github/AbrahamTewa/starter.react?branch=master) [![Dependency status](https://david-dm.org/AbrahamTewa/starter.react.svg)](https://david-dm.org/AbrahamTewa/starter.react) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07acca80a73449ed98b6b0b44c2800e3)](https://www.codacy.com/app/AbrahamTewa/starter.react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AbrahamTewa/starter.react&amp;utm_campaign=Badge_Grade) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=AbrahamTewa_starter.react&metric=alert_status)](https://sonarcloud.io/dashboard?id=AbrahamTewa_starter.react) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Simple node starter, using Babel 7, gulp 4, unit testing, eslinting, etc...
+Simple React starter, using Babel 7, gulp 4, unit testing, eslinting, etc...
 
 ## Description
 
@@ -37,6 +37,7 @@ Complete unit-testing environment :
   - Release
   - Github Pages
 - [Codacy](https://codacy.com) integration
+- [SonarCloud](https://sonarcloud.io) integration
 
 ### Documentation
 - [jsDoc](http://usejsdoc.org/) with [minami theme](https://www.npmjs.com/package/minami) for documentation generation.
@@ -58,17 +59,18 @@ In travis, you need to setup the following variables for your project:
 * `CODACY_PROJECT_TOKEN`
 * `GITHUB_TOKEN`
 * `NPM_TOKEN`
+* `SONAR_TOKEN` for SonarCloud integration
 
 #### `CODACY_PROJECT_TOKEN`
 
 Codacy's project token. See "Project API" in the Settings/Integrations tab of the codacy project.
-This token will be by travis to send coverage report to codacy.
+This token will be use by travis to send coverage report to codacy.
 
 #### `GITHUB_TOKEN`
 
 [Personal access token](https://github.com/settings/tokens) configurable in Developer settings section.
 
-This token will be used for semantic-release. It enable the tool to update the repository with changelog, updated version of package.json and tag creation.
+This token will be use for semantic-release. It enable the tool to update the repository with changelog, updated version of package.json and tag creation.
 
 See:
 * [Semantic-release/github configuration](https://github.com/semantic-release/github#configuration)
@@ -80,6 +82,11 @@ It enable the publication of your package if it's not private.
 
 See:
 * [Semantic-release/npm configuration](https://github.com/semantic-release/npm#configuration)
+
+#### `SONAR_TOKEN`
+
+Enable SonarCloud integration.
+See [Travic documentation](https://docs.travis-ci.com/user/sonarcloud/)).
 
 ## Usage
 
@@ -104,7 +111,7 @@ Run the build of the application.
 The builder will create a new folder "build" in which the build will be added.
 
 ```bash
-npm test
+npm run build
 ```
 
 ### `npm run lint`

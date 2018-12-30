@@ -54,6 +54,14 @@ jobs:
           script:
                 - npm run lint
 
+        - stage: validation
+          name: SonarCloud
+          addons:
+            sonarcloud:
+              organization: "abrahamtewa-github"
+          script:
+            - sonar-scanner
+
         - stage: release
           name: "Release"
           # Advanced: optionally overwrite your default `script` step to skip the tests
