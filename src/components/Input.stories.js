@@ -9,7 +9,7 @@ import { action } from '@storybook/addon-actions';
 
 // ============================================================
 // Import module
-import Input from '../Input';
+import Input from './Input';
 
 // ============================================================
 // Story
