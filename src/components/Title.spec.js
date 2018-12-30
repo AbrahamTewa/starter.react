@@ -4,7 +4,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
-import Title from '../Title';
+import Title from './Title';
 
 describe('Basic tests', () => {
     test('Emtpy string', () => {

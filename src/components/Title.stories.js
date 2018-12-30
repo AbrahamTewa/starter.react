@@ -8,7 +8,7 @@ import { storiesOf } from '@storybook/react';
 
 // ============================================================
 // Import components
-import Title from '../Title';
+import Title from './Title';
 
 // ============================================================
 // Story
