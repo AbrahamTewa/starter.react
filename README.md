@@ -1,15 +1,15 @@
-# starter.reactjs
+# starter.react
 
-[![Build Status](https://travis-ci.org/AbrahamTewa/starter.reactjs.svg?branch=master)](https://travis-ci.org/AbrahamTewa/starter.reactjs) [![Coverage Status](https://coveralls.io/repos/github/AbrahamTewa/starter.reactjs/badge.svg?branch=master)](https://coveralls.io/github/AbrahamTewa/starter.reactjs?branch=master) [![Dependency status](https://david-dm.org/AbrahamTewa/starter.reactjs.svg)](https://david-dm.org/AbrahamTewa/starter.reactjs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07acca80a73449ed98b6b0b44c2800e3)](https://www.codacy.com/app/AbrahamTewa/starter.reactjs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AbrahamTewa/starter.reactjs&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/AbrahamTewa/starter.react.svg?branch=master)](https://travis-ci.org/AbrahamTewa/starter.react) [![Coverage Status](https://coveralls.io/repos/github/AbrahamTewa/starter.react/badge.svg?branch=master)](https://coveralls.io/github/AbrahamTewa/starter.react?branch=master) [![Dependency status](https://david-dm.org/AbrahamTewa/starter.react.svg)](https://david-dm.org/AbrahamTewa/starter.react) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/07acca80a73449ed98b6b0b44c2800e3)](https://www.codacy.com/app/AbrahamTewa/starter.react?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=AbrahamTewa/starter.react&amp;utm_campaign=Badge_Grade) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 Simple node starter, using Babel 7, gulp 4, unit testing, eslinting, etc...
 
 ## Description
 
-This project is meant to be a ReactJS starter. It expose a simple CLI that display "Hello world" in the console. But all main development aspects are included in this project.
+This project is meant to be a React starter. It expose a simple CLI that display "Hello world" in the console. But all main development aspects are included in this project.
 
 ### Stack
-- [React 16.1](https://reactjs.org/)
+- [React 16.1](https://react.org/)
 - [Redux 4](https://redux.js.org/)
 - [Sass](http://sassdoc.com/)
 
@@ -45,8 +45,8 @@ Complete unit-testing environment :
 ## Install
 
 ```bash
-git clone https://github.com/AbrahamTewa/starter.reactjs.git
-cd starter.reactjs
+git clone https://github.com/AbrahamTewa/starter.react.git
+cd starter.react
 npm ci
 npm run build
 ```
@@ -90,8 +90,8 @@ npm start -- --help
 ## Usage
 
 ```bash
-git clone https://github.com/AbrahamTewa/starter.reactjs.git
-cd starter.reactjs
+git clone https://github.com/AbrahamTewa/starter.react.git
+cd starter.react
 npm install
 npm run build
 npm start
