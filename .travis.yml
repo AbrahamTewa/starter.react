@@ -61,7 +61,7 @@ jobs:
           script:
                 - npm audit
 
-          after_failure: skip
+          after_failure: ignore
 
         - stage: release
           name: "Release"
