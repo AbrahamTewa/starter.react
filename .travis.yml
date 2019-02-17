@@ -61,6 +61,8 @@ jobs:
           script:
                 - npm audit
 
+          after_failure: skip
+
         - stage: release
           name: "Release"
           if: branch = master
