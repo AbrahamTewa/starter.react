@@ -15,6 +15,10 @@ stages:
     - release
 
 jobs:
+    allow_failures:
+        - stage: validation
+          name: "Audit"
+
     include:
         - stage: validation
           name: "Lint"
@@ -60,8 +64,6 @@ jobs:
           name: "Audit"
           script:
                 - npm audit
-
-          after_failure: ignore
 
         - stage: release
           name: "Release"
