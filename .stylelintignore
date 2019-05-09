@@ -3,5 +3,3 @@
 /docs/vendors/
 /node_modules
 /reports
-**/*.json
-/sonar-project.properties
