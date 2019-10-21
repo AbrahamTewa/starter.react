@@ -9,7 +9,7 @@ Simple React starter, using Babel 7, gulp 4, unit testing, eslinting, etc...
 This project is meant to be a React starter. It expose a simple CLI that display "Hello world" in the console. But all main development aspects are included in this project.
 
 ### Stack
-- [React 16.1](https://react.org/)
+- [React 16.10](https://react.org/)
 - [Redux 4](https://redux.js.org/)
 - [Sass](http://sassdoc.com/)
 
