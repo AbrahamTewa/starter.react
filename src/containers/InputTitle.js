@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        onkeypress: event => dispatch(actions.setTitle(event.target.value)),
+        onkeypress: (event) => dispatch(actions.setTitle(event.target.value)),
     };
 }
 

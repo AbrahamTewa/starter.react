@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/AbrahamTewa/starter.react/compare/v1.2.0...v1.3.0) (2019-05-09)
+
+
+### Bug Fixes
+
+* Remove useless package: babel-plugin-instabul ([22ea7cc](https://github.com/AbrahamTewa/starter.react/commit/22ea7cc))
+* Travis's allow failure policy ([616b878](https://github.com/AbrahamTewa/starter.react/commit/616b878))
+* Update dependencies ([f27944b](https://github.com/AbrahamTewa/starter.react/commit/f27944b))
+
+
+### Features
+
+* Add npm audit ci job ([94ee98d](https://github.com/AbrahamTewa/starter.react/commit/94ee98d))
+* Update dependencies ([dcd41ee](https://github.com/AbrahamTewa/starter.react/commit/dcd41ee))
+
 # [1.2.0](https://github.com/AbrahamTewa/starter.react/compare/v1.1.1...v1.2.0) (2018-12-30)
 
 
