@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/AbrahamTewa/starter.react/compare/v1.3.0...v1.4.0) (2019-10-21)
+
+
+### Features
+
+* Update dependencies ([5ad722b](https://github.com/AbrahamTewa/starter.react/commit/5ad722bca31d8ebe7ab82dc766b24313c3ee45c5))
+
 # [1.3.0](https://github.com/AbrahamTewa/starter.react/compare/v1.2.0...v1.3.0) (2019-05-09)
 
 
